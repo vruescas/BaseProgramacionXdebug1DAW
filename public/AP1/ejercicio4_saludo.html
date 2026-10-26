@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Saludo</title>
+</head>
+<body>
+<script>
+function crearSaludo(nombre, hora) {
+  let saludo = "Hola";
+ 
+  if (hora < 12) {
+    saludo = "Buenos días";
+  } else if (hora < 20) {
+    saludo = "Buenas tardes";
+  } else {
+    saludo = "Buenas noches";
+  }
+ 
+  return saludo + ", " + nombre + "!";
+}
+ 
+let nombre = "Ana";
+let hora = 15;
+let mensaje = crearSaludo(hora, nombre);
+console.log(mensaje);
+</script>
+</body>
+</html>

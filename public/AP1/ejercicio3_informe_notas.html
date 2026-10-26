@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>AP1 - Ejercicio 3: Informe de notas</title>
+</head>
+<body>
+  <h1>AP1 - Ejercicio 3: Informe de notas</h1>
+  <p>Abre la consola del navegador (F12 &rarr; pestaña <strong>Consola</strong>) y recarga la página (F5) para ver el resultado.</p>
+  <p>Para depurar, usa la pestaña <strong>Depurador / Sources</strong>.</p>
+
+<script>
+// ============================================================
+// EJERCICIO 3: Informe de notas
+// Objetivo: mostrar la media de cada alumno y si aprueba (media >= 5).
+//
+// RESULTADO ESPERADO:
+//   Ana tiene una media de 7.50 y su resultado es APROBADO
+//   Luis tiene una media de 4.25 y su resultado es SUSPENSO
+//
+// TAREA: hay 4 errores. Encuéntralos, corrígelos y explica
+// con tus palabras qué fallaba en cada caso.
+// PISTA: no todos los errores muestran un mensaje en rojo.
+// ============================================================
+
+function crearInforme(nombre, notas) {
+  let suma = 0;
+  for (let i = 0; i < notas.length; i++) {
+    suma = suma + notas[i];
+  }
+
+  const media = suma / notas.lenght;
+
+  let resultado = "SUSPENSO";
+  if (media >= 5) {
+    resultdo = "APROBADO";
+  }
+
+  media = media.toFixed(2);
+
+  return nombre + " tiene una media de " + media + " y su resultado es " + resultado;
+}
+
+let notasAna = [8, 7, 6, 9];
+let notasLuis = [3, 5, 4, 5];
+
+console.log(crearInforme(notasAna, "Ana"));
+console.log(crearInforme(notasLuis, "Luis"));
+</script>
+</body>
+</html>

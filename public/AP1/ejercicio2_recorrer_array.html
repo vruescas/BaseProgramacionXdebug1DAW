@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>AP1 - Ejercicio 2: Recorrer array</title>
+</head>
+<body>
+  <h1>AP1 - Ejercicio 2: Recorrer array</h1>
+  <p>Abre la consola del navegador (F12 &rarr; pestaña <strong>Consola</strong>) y recarga la página (F5) para ver el resultado.</p>
+  <p>Para depurar, usa la pestaña <strong>Depurador / Sources</strong>.</p>
+
+<script>
+// ============================================================
+// EJERCICIO 2: Recorrer un array
+// Objetivo: calcular suma, máximo y media de una lista de números.
+//
+// RESULTADO ESPERADO:
+//   Suma: 15
+//   Máximo: 9
+//   Media: 3
+//   Máximo con negativos: -2
+//
+// TAREA: encuentra y corrige los errores. Usa console.log,
+// puntos de interrupción (breakpoints) y el panel "Watch"
+// de las DevTools para seguir el valor de las variables.
+// ============================================================
+
+function sumar(array) {
+  let total = "";
+  for (let i = 1; i <= array.length; i++) {
+    total += array[i];
+  }
+  return total;
+}
+
+function maximo(array) {
+  let max = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > max) {
+      max = array[i];
+    }
+  }
+  return max;
+}
+
+function media(array) {
+  return sumar(array) / array.length();
+}
+
+let numeros = [4, -2, 9, 1, 3];
+
+console.log("Suma:", sumar(numeros));
+console.log("Máximo:", maximo(numeros));
+console.log("Media:", media(numeros));
+console.log("Máximo con negativos:", maximo([-5, -2, -9]));
+</script>
+</body>
+</html>

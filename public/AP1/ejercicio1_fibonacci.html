@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>AP1 - Ejercicio 1: Fibonacci</title>
+</head>
+<body>
+  <h1>AP1 - Ejercicio 1: Fibonacci</h1>
+  <p>Abre la consola del navegador (F12 &rarr; pestaña <strong>Consola</strong>) y recarga la página (F5) para ver el resultado.</p>
+  <p>Para depurar, usa la pestaña <strong>Depurador / Sources</strong>.</p>
+
+<script>
+// ============================================================
+// EJERCICIO 1: Serie de Fibonacci
+// Objetivo: generar los 10 primeros términos y contar los pares.
+//
+// RESULTADO ESPERADO:
+//   Serie: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+//   Número de términos: 10c
+//   Números pares: 4
+//
+// TAREA: ejecuta el programa, usa la consola/depurador,
+// encuentra los errores y corrígelos. Anota de qué tipo es cada uno
+// (sintaxis, ejecución o lógica).
+// ============================================================
+
+function fibonacci(n) {
+  let serie = [0, 1];
+
+  for (let i = 2; i <= n; i++) {
+    serie.push(serie[i - 1] + serie[i - 3]);
+  }
+
+  return serie;
+}
+
+let resultado = fibonacci(10);
+console.log("Serie:", resultado);
+console.log("Número de términos:", resultado.length);
+
+let pares = 0;
+for (let j = 0; j < resultado.length; j++) {
+  if (resultado[j] % 2 == 0) {
+    pares++;
+  }
+}
+console.log("Números pares:", pares);
+</script>
+</body>
+</html>
